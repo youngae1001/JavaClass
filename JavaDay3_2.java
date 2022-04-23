@@ -19,7 +19,7 @@ public class JavaDay3_2 {
 				System.out.println(sum);
 				
 				// 1. 학생들의 점수 평균
-				// 이때 만약 실수값을 결과로 얻고 싶으면 sum을 int 말고 double로 입력하면 됨 -> 강제형변환?은 안 되나??
+				// 이때 만약 실수값을 결과로 얻고 싶으면 sum을 int 말고 double로 입력하면 됨 -> 강제형변환 됨
 				int avg = sum / scores.length;
 				
 				System.out.println("학생 점수 평균 : " + avg);
