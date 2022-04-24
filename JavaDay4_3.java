@@ -47,27 +47,23 @@ public class JavaDay4_3 {
 		}
 	}
 	
-	public static void greeting1(int what) {
-		if(what == 1) {
+	public static void greeting1(int lang) {
+		if(lang == 1) {
 			System.out.println("æ»≥Á«œººø‰");
-		}
-		if(what == 2) {
+		} else if(lang == 2) {
 			System.out.println("«œ¿Ã~");
-		}
-		if(what == 3) {
+		} else if(lang == 3) {
 			System.out.println("∫¿¡Í");
 		}
 	}
 	
-	public static void greeting2(int what, int many) {
+	public static void greeting2(int lang, int many) {
 		for(int i=0; i<many; i++) {			
-			if(what == 1) {
+			if(lang == 1) {
 				System.out.println("æ»≥Á«œººø‰");
-			}
-			if(what == 2) {
+			} else if(lang == 2) {
 				System.out.println("«œ¿Ã~");
-			}
-			if(what == 3) {
+			} else if(lang == 3) {
 				System.out.println("∫¿¡Í");
 			}
 		}
