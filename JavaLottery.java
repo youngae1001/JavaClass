@@ -28,16 +28,30 @@ public class JavaLottery {
         	lottoNums[i] = random.nextInt(45);
         }
         
-        int swap = lottoNums[0];
+//        while(true) {
+//        	for(int i=0; i<lottoNums.length-1; i++) {        	
+//        		if(lottoNums[i] == lottoNums[i+1]) {
+//        			lottoNums[i+1] = random.nextInt(45);
+//        		}
+//        	}
+//        	for(int i=0; i<lottoNums.length-1; i++) {        		
+//        		if(lottoNums[i] != lottoNums[i+1]) {
+//        			break;
+//        		}
+//        	}
+//        }
+
         
-        for(int j=0; j<length; j++) {
-        	for(int i=1; i<length-1; i++) {
-        		if(lottoNums[i]<swap) {
-        			lottoNums[i-1] = lottoNums[i];
-        			lottoNums[i] = swap;
-        		}
-        	}        	
-        }
+        for(int j=lottoNums.length-1; j>1; j--) { // 여기서 j를 j>0으로 하지 않는 이유 : 뒤에 7개에 포커스 두고 정렬작업하면 자연스레 첫번째 거는 정렬되어있음
+			for(int i=0; i<j; i++) {
+				int swap=lottoNums[i];
+				if(lottoNums[i+1]<swap) {
+					lottoNums[i]=lottoNums[i+1];
+					lottoNums[i+1]=swap;
+				}
+			}
+			
+		}
         // 한참 더 해야됨
 
         // ======================================================================================
