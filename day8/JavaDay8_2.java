@@ -52,6 +52,8 @@ public class JavaDay8_2 {
 //				int dnum = Integer.parseInt(scan.nextLine());
 //				
 //				m1.deleteBeverage(dnum);
+			
+			// 이 부분 올려주신 파일 확인
 //			}
 			
 			else {
