@@ -20,7 +20,7 @@ public class JavaDay8_2 {
 			System.out.println("1. 음료수 뽑기");
 			System.out.println("2. 음료수 추가");
 			System.out.println("3. 음료수 목록");
-//			System.out.println("4. 음료수 삭제");
+			System.out.println("4. 음료수 삭제");
 			System.out.print("메뉴를 선택해주세요 : ");
 			int cmd = Integer.parseInt(scan.nextLine());
 			System.out.println();
@@ -47,14 +47,12 @@ public class JavaDay8_2 {
 				m1.printBeverageList();
 				
 			}
-//			else if(cmd==4) {
-//				System.out.print("삭제할 음료수의 번호를 입력해주세요 : ");
-//				int dnum = Integer.parseInt(scan.nextLine());
-//				
-//				m1.deleteBeverage(dnum);
-			
-			// 이 부분 올려주신 파일 확인
-//			}
+			else if(cmd==4) {
+				System.out.print("삭제할 음료수의 번호를 입력해주세요 : ");
+				int dnum = Integer.parseInt(scan.nextLine());
+				
+				m1.deleteBeverage(dnum);			
+			}
 			
 			else {
 				System.out.println("자판기를 종료합니다.");

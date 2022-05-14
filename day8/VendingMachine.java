@@ -43,11 +43,17 @@ public class VendingMachine {
 		count++;
 	}
 	
-//	public void deleteBeverage(int num) {
-//		for(int i=num; i<beverages.length; i++) {
-//			beverages[i] = beverages[i+1];
-//		}
-//	}
+	public void deleteBeverage(int num) {
+		if(num>=0 && num<=count) {			
+			for(int i=num; i<count; i++) {
+				beverages[i] = beverages[i+1];
+			}
+			count--;
+		}
+		else {
+			System.out.println("해당 번호의 음료가 없습니다.");
+		}
+	}
 	
 	public String operate(int inputMoney, int bno) {
 		// 음료 목록
