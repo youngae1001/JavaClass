@@ -61,7 +61,7 @@ public class Java2Day1_2 {
 		// ====================================(출력)
 		
 		
-		ArrayList<Board> boards = new ArrayList<>();
+		ArrayList<Article> articles = new ArrayList<>();
 		
 		while(true) {
 			System.out.print("명령어를 입력해주세요 : ");
@@ -78,15 +78,15 @@ public class Java2Day1_2 {
 				System.out.print("내용을 입력해주세요 : ");
 				String content = sc.nextLine();
 				
-				Board b1 = new Board(title, content);
-				boards.add(b1);
+				Article b1 = new Article(title, content);
+				articles.add(b1);
 				System.out.println("게시물이 저장되었습니다.");
 				
 			} else if(cmd.equals("list")) {
-				for(int i=0; i<boards.size(); i++) {						
+				for(int i=0; i<articles.size(); i++) {						
 					System.out.println("번호 : "+ (i+1));
-					System.out.println("제목 : " + boards.get(i).title);
-					System.out.println("내용 : " + boards.get(i).content);
+					System.out.println("제목 : " + articles.get(i).title);
+					System.out.println("내용 : " + articles.get(i).content);
 					System.out.println("================================");
 				} 
 				
@@ -101,14 +101,4 @@ public class Java2Day1_2 {
 
 	}
 
-}
-
-class Board {
-	String title;
-	String content;
-	
-	public Board(String data1, String data2) {
-		title = data1;
-		content = data2;
-	}
 }

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Java2Day1_4 {
+	
+	// main함수 밖에 있는 자원은 static을 붙여야됨
+	static ArrayList<String> titles = new ArrayList<>();
+	static ArrayList<String> bodies = new ArrayList<>();
 
 	public static void main(String[] args) {
 		/* 요구사항 : 게시물 수정
@@ -45,7 +49,7 @@ public class Java2Day1_4 {
 		*/
 		
 		Scanner sc = new Scanner(System.in);
-		ArrayList<String> titles = new ArrayList<>();
+		
 		
 		for( ; ; ) {
 			System.out.print(">> ");
@@ -63,25 +67,54 @@ public class Java2Day1_4 {
 			} else if(cmd.equals("add")) {
 				System.out.print("제목 : ");
 				String title = sc.nextLine();
+				System.out.print("내용 : ");
+				String body = sc.nextLine();
 				titles.add(title);
+				bodies.add(body);
 				
 				System.out.println("게시물이 저장되었습니다.");
 				
 			} else if(cmd.equals("list")) {
-				for(int i=0; i<titles.size(); i++) {	
-					System.out.println(i+1 + "번째 글");
-					System.out.printf("제목 : %s\n",titles.get(i));
-					System.out.println("======================");
-				}
+				printArticles();
+				
 			} else if(cmd.equals("update")) {
+				
+				// CRUD
 				System.out.print("수정할 게시글의 번호 : ");
-				int index = sc.nextLine();
-				// 더 해야됨!!!!!
-			}
-			else {
+				int num = Integer.parseInt(sc.nextLine());
+				int index = num - 1;
+				
+				if(index >= 0 && index < titles.size()) {
+					System.out.print("새 제목 : ");
+					String title = sc.nextLine();
+					System.out.print("새 내용 : ");
+					String body = sc.nextLine();
+					
+					titles.set(index, title);
+					bodies.set(index, body);
+					
+					System.out.println("수정이 완료되었습니다.");
+					
+					printArticles();
+
+				} else {
+					System.out.println("해당 번호의 게시글이 없습니다.");
+				}
+				
+			} else {
 				System.out.println("알 수 없는 명령어입니다.");
 			}
 		}
 	}
 
+	public static void printArticles() {
+		// list 전체 출력
+		for(int i=0; i<titles.size(); i++) {	
+			System.out.println(i+1 + "번째 글");
+			System.out.printf("제목 : %s\n",titles.get(i));
+			System.out.printf("내용 : %s\n",bodies.get(i));
+			System.out.println("======================");
+		}
+	}
+	
 }
